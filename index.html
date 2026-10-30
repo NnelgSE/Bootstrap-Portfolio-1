@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Glenn Gonzaga | Front-End Developer</title>
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --navy: #101d2d;
+        --navy-light: #192b40;
+        --blue: #4d8dff;
+        --cream: #f5f4ef;
+        --muted: #788493;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 85px;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        background: var(--cream);
+        color: var(--navy);
+      }
+
+      .mono {
+        font-family: "DM Mono", monospace;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        background: var(--navy);
+        padding: 18px 0;
+      }
+
+      .navbar-brand {
+        font-weight: 800;
+        letter-spacing: -1px;
+        color: white !important;
+      }
+
+      .brand-dot {
+        color: var(--blue);
+      }
+
+      .navbar .nav-link {
+        color: #c4cfdb;
+        font-size: 13px;
+        margin-left: 20px;
+        transition: 0.3s;
+      }
+
+      .navbar .nav-link:hover {
+        color: var(--blue);
+      }
+
+      .nav-contact {
+        border: 1px solid #60738a;
+        border-radius: 30px;
+        padding: 9px 20px !important;
+        color: white !important;
+      }
+
+      /* HERO */
+      .hero {
+        background: var(--navy);
+        color: white;
+        min-height: 650px;
+        padding: 110px 0 100px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        width: 480px;
+        height: 480px;
+        border: 1px solid rgba(77, 141, 255, 0.18);
+        border-radius: 50%;
+        right: -120px;
+        top: 40px;
+        box-shadow:
+          0 0 0 55px rgba(77, 141, 255, 0.025),
+          0 0 0 110px rgba(77, 141, 255, 0.025);
+      }
+
+      .hero-label {
+        color: #85b0ff;
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        font-size: clamp(45px, 7vw, 82px);
+        font-weight: 800;
+        letter-spacing: -5px;
+        line-height: 1.08;
+        margin: 25px 0;
+      }
+
+      .hero h1 span {
+        color: var(--blue);
+      }
+
+      .hero-description {
+        color: #b9c5d2;
+        max-width: 570px;
+        line-height: 1.9;
+        font-size: 15px;
+      }
+
+      .btn-blue {
+        background: var(--blue);
+        border: 1px solid var(--blue);
+        color: white;
+        border-radius: 5px;
+        padding: 14px 25px;
+        font-weight: 700;
+        transition: 0.3s;
+      }
+
+      .btn-blue:hover {
+        background: #3475e8;
+        border-color: #3475e8;
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .btn-outline-light {
+        border-radius: 5px;
+        padding: 14px 25px;
+      }
+
+      .hero-note {
+        border-left: 2px solid var(--blue);
+        padding-left: 15px;
+        color: #aab7c6;
+        font-size: 12px;
+        line-height: 1.8;
+      }
+
+      /* INTRO STRIP */
+      .intro-strip {
+        background: var(--blue);
+        color: white;
+        padding: 17px 0;
+        font-size: 12px;
+        letter-spacing: 2px;
+        font-weight: 700;
+      }
+
+      /* SECTION STYLES */
+      .section-padding {
+        padding: 100px 0;
+      }
+
+      .section-label {
+        color: #3978dc;
+        font-size: 11px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 800;
+        letter-spacing: -2px;
+      }
+
+      .section-description {
+        color: var(--muted);
+        line-height: 1.9;
+        font-size: 14px;
+      }
+
+      /* ABOUT */
+      .about-card {
+        background: var(--navy);
+        color: white;
+        padding: 35px;
+        height: 100%;
+        border-radius: 8px;
+      }
+
+      .about-number {
+        font-size: 55px;
+        font-weight: 800;
+        color: var(--blue);
+        letter-spacing: -3px;
+      }
+
+      .about-card p {
+        color: #b9c5d2;
+        line-height: 1.8;
+        font-size: 13px;
+      }
+
+      .about-detail {
+        padding: 18px 0;
+        border-bottom: 1px solid #dce1e7;
+      }
+
+      .about-detail:last-child {
+        border-bottom: none;
+      }
+
+      /* SKILLS */
+      .skills-section {
+        background: #e9edf2;
+      }
+
+      .skill-card {
+        background: white;
+        padding: 25px;
+        border-radius: 7px;
+        height: 100%;
+        border: 1px solid #e3e7ec;
+        transition: 0.3s;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--blue);
+      }
+
+      .skill-icon {
+        font-size: 28px;
+        color: var(--blue);
+      }
+
+      .skill-card h5 {
+        font-size: 16px;
+        font-weight: 800;
+        margin-top: 15px;
+      }
+
+      .skill-card p {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.8;
+      }
+
+      .skill-tag {
+        display: inline-block;
+        background: #edf3ff;
+        color: #326dc5;
+        font-size: 10px;
+        padding: 6px 10px;
+        border-radius: 3px;
+        margin: 3px;
+      }
+
+      /* PROJECTS */
+      .project-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #e4e8ed;
+        height: 100%;
+        transition: 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 15px 35px rgba(16, 29, 45, 0.09);
+      }
+
+      /* PROJECT IMAGE */
+
+      .project-visual {
+        min-height: 220px;
+        background: var(--navy-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-visual img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Image label */
+      .project-visual .visual-label {
+        position: absolute;
+        top: 18px;
+        left: 20px;
+        z-index: 2;
+
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: white;
+
+        background: rgba(16, 29, 45, 0.85);
+        padding: 8px 12px;
+        border-radius: 4px;
+      }
+
+      .project-content {
+        padding: 27px;
+      }
+
+      .project-content h4 {
+        font-size: 19px;
+        font-weight: 800;
+      }
+
+      .project-content p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .project-link {
+        color: #3978dc;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .project-link:hover {
+        color: var(--navy);
+      }
+
+      /* SERVICES */
+      .service-item {
+        padding: 25px 0;
+        border-bottom: 1px solid #dce1e7;
+      }
+
+      .service-item h5 {
+        font-size: 17px;
+        font-weight: 800;
+      }
+
+      .service-item p {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      /* CONTACT */
+      .contact-section {
+        background: var(--navy);
+        color: white;
+      }
+
+      .contact-section .section-title {
+        color: white;
+      }
+
+      .contact-section .section-description {
+        color: #b9c5d2;
+      }
+
+      .contact-box {
+        background: var(--navy-light);
+        border: 1px solid #34485e;
+        padding: 35px;
+        border-radius: 7px;
+      }
+
+      .contact-box a {
+        color: #8db6ff;
+        text-decoration: none;
+        word-break: break-word;
+      }
+
+      .contact-box a:hover {
+        color: white;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #0b1522;
+        color: #9eacbb;
+        padding: 25px 0;
+        font-size: 11px;
+      }
+
+      footer a {
+        color: white;
+        text-decoration: none;
+        margin-left: 15px;
+      }
+
+      footer a:hover {
+        color: var(--blue);
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 85px 0;
+          min-height: auto;
+        }
+
+        .hero h1 {
+          letter-spacing: -3px;
+        }
+
+        .section-padding {
+          padding: 70px 0;
+        }
+
+        .navbar .nav-link {
+          margin-left: 0;
+          padding: 12px 0;
+        }
+
+        .nav-contact {
+          display: inline-block;
+          margin-top: 10px;
+        }
+      }
+
+      /* =================================
+   HERO BACKGROUND IMAGE SLIDER
+================================= */
+
+      .hero {
+        position: relative;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: #071426;
+      }
+
+      /* Background container */
+      .hero-slides {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      /* Individual slides */
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+
+        animation: heroFade 15s infinite;
+      }
+
+      /* First image */
+      .slide-1 {
+        background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=85");
+        animation-delay: 0s;
+      }
+
+      /* Second image */
+      .slide-2 {
+        background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=85");
+        animation-delay: -5s;
+      }
+
+      /* Third image */
+      .slide-3 {
+        background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=85");
+        animation-delay: -10s;
+      }
+
+      /* Fade animation */
+      @keyframes heroFade {
+        0% {
+          opacity: 0;
+        }
+
+        6% {
+          opacity: 1;
+        }
+
+        27% {
+          opacity: 1;
+        }
+
+        33% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* Dark overlay */
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+
+        background: linear-gradient(
+          90deg,
+          rgba(3, 12, 27, 0.95),
+          rgba(3, 12, 27, 0.75),
+          rgba(3, 12, 27, 0.35)
+        );
+      }
+
+      /* Keep content above background */
+      .hero .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Mobile */
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 85vh;
+        }
+
+        .hero::after {
+          background: rgba(3, 12, 27, 0.8);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">
+          <img src="assets/logo.png" width="60" height="60" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link nav-contact" href="#contact">
+                Let's Talk <i class="bi bi-arrow-up-right"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-slides">
+        <div class="hero-slide slide-1"></div>
+        <div class="hero-slide slide-2"></div>
+        <div class="hero-slide slide-3"></div>
+      </div>
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-9">
+            <p class="hero-label mono">
+              <i class="bi bi-circle-fill me-2"></i>
+              FRONT-END DEVELOPER / PHILIPPINES
+            </p>
+
+            <h1>
+              I BUILD<br />
+              DIGITAL<br />
+              <span>EXPERIENCES.</span>
+            </h1>
+
+            <p class="hero-description">
+              I'm Glenn Gonzaga, a web developer focused on building responsive,
+              functional, and user-friendly websites. I combine front-end
+              development with practical business knowledge to turn ideas into
+              useful digital solutions.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a href="#projects" class="btn btn-blue">
+                Explore My Work
+                <i class="bi bi-arrow-up-right ms-2"></i>
+              </a>
+
+              <a href="#contact" class="btn btn-outline-light"> Contact Me </a>
+            </div>
+
+            <div class="hero-note mt-5">
+              CURRENT FOCUS: FRONT-END DEVELOPMENT<br />
+              HTML / CSS / JAVASCRIPT / BOOTSTRAP
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO STRIP -->
+    <section class="intro-strip">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between gap-3">
+          <span>DESIGN WITH PURPOSE</span>
+          <span>DEVELOP WITH STRUCTURE</span>
+          <span>BUILD FOR PEOPLE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-padding" id="about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <p class="section-label mono">01 / ABOUT ME</p>
+
+            <h2 class="section-title">More than just writing code.</h2>
+
+            <p class="section-description mt-4">
+              My background in administrative and warehouse operations has given
+              me practical experience understanding how businesses work, manage
+              information, and solve everyday operational problems.
+            </p>
+
+            <p class="section-description">
+              I'm bringing that experience into web development by creating
+              digital tools and interfaces that prioritize usability,
+              organization, and efficiency.
+            </p>
+
+            <a href="#contact" class="project-link">
+              WORK WITH ME
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="about-card">
+              <p class="mono text-uppercase small">
+                My professional background
+              </p>
+
+              <div class="about-number">06+</div>
+
+              <h5 class="fw-bold">Years in Administration & Operations</h5>
+
+              <p>
+                Experience in warehouse coordination, inventory monitoring,
+                documentation, timekeeping support, and business processes.
+              </p>
+
+              <hr class="border-secondary my-4" />
+
+              <div class="row">
+                <div class="col-6">
+                  <p class="mono small mb-1">LOCATION</p>
+                  <h6 class="fw-bold">Davao, Philippines</h6>
+                </div>
+
+                <div class="col-6">
+                  <p class="mono small mb-1">CAREER FOCUS</p>
+                  <h6 class="fw-bold">Web Development</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section-padding skills-section" id="skills">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-7">
+            <p class="section-label mono">02 / TECHNICAL SKILLS</p>
+
+            <h2 class="section-title">Tools I use to build.</h2>
+
+            <p class="section-description">
+              My current development toolkit, covering front-end interfaces and
+              foundational back-end technologies.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- FRONTEND -->
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-card">
+              <i class="bi bi-code-slash skill-icon"></i>
+
+              <h5>Front-End Development</h5>
+
+              <p>Building responsive layouts and structured user interfaces.</p>
+
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Bootstrap 5</span>
+              <span class="skill-tag">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <!-- BACKEND -->
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-card">
+              <i class="bi bi-database skill-icon"></i>
+
+              <h5>Back-End Foundations</h5>
+
+              <p>Learning server-side development and application structure.</p>
+
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+
+          <!-- TOOLS -->
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-card">
+              <i class="bi bi-terminal skill-icon"></i>
+
+              <h5>Development Tools</h5>
+
+              <p>Tools for writing, testing, managing, and deploying code.</p>
+
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Laragon</span>
+              <span class="skill-tag">NPM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section-padding" id="projects">
+      <div class="container">
+        <div class="row align-items-end mb-5">
+          <div class="col-lg-8">
+            <p class="section-label mono">03 / SELECTED WORK</p>
+
+            <h2 class="section-title">Projects in progress.</h2>
+
+            <p class="section-description">
+              Practical projects where I apply my knowledge of front-end
+              development and programming.
+            </p>
+          </div>
+
+          <div class="col-lg-4 text-lg-end">
+            <span class="mono small text-secondary">
+              PERSONAL PROJECTS / 2026
+            </span>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- PROJECT 1 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-visual">
+                <span class="visual-label mono"> PROJECT 01 / E-COMMERCE </span>
+
+                <img src="assets/sampleprojects.png" alt="Dytech" />
+              </div>
+
+              <div class="project-content">
+                <p class="section-label mono">PHP / MYSQL / JAVASCRIPT</p>
+
+                <h4>DY Tech Gadget Store</h4>
+
+                <p>
+                  An e-commerce practice project for a gadget store featuring
+                  product listings, shopping cart functionality, and installment
+                  calculation concepts.
+                </p>
+
+                <div class="mb-3">
+                  <span class="skill-tag">HTML</span>
+                  <span class="skill-tag">CSS</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">PHP</span>
+                  <span class="skill-tag">MySQL</span>
+                </div>
+
+                <a href="#" class="project-link">
+                  VIEW PROJECT
+                  <i class="bi bi-arrow-up-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-visual">
+                <span class="visual-label mono">
+                  PROJECT 02 / WEB PORTFOLIO
+                </span>
+
+                 <img src="assets/tailwindportfolio.PNG" alt="Tailwind Project" />
+              </div>
+
+              <div class="project-content">
+                <p class="section-label mono">HTML / CSS / TAILWIND</p>
+
+                <h4>Personal Developer Portfolio</h4>
+
+                <p>
+                  A responsive personal portfolio designed to showcase my
+                  technical skills, selected projects, and development journey.
+                </p>
+
+                <div class="mb-3">
+                  <span class="skill-tag">HTML</span>
+                  <span class="skill-tag">Tailwind CSS</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">GitHub Pages</span>
+                </div>
+
+                <a
+                  href="https://nnelgse.github.io/My-portfolio---tailwind/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  VIEW LIVE PROJECT
+                  <i class="bi bi-arrow-up-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-visual">
+                <span class="visual-label mono"> PROJECT 03 / FRONT-END </span>
+
+                 <img src="assets/bootstrapproject.png" alt="bootstrap project" />
+              </div>
+
+              <div class="project-content">
+                <p class="section-label mono">BOOTSTRAP / RESPONSIVE DESIGN</p>
+
+                <h4>Bootstrap Portfolio Website</h4>
+
+                <p>
+                  A responsive developer portfolio using Bootstrap's grid
+                  system, navigation, reusable components, and custom CSS.
+                </p>
+
+                <div class="mb-3">
+                  <span class="skill-tag">Bootstrap 5</span>
+                  <span class="skill-tag">HTML5</span>
+                  <span class="skill-tag">CSS3</span>
+                </div>
+
+                <a href="#contact" class="project-link">
+                  PROJECT DETAILS
+                  <i class="bi bi-arrow-up-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 4 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-visual">
+                <span class="visual-label mono">
+                  PROJECT 04 / COMING NEXT
+                </span>
+
+                <img
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85"
+                        alt="Business analytics dashboard">
+              </div>
+
+              <div class="project-content">
+                <p class="section-label mono">PHP / LARAVEL / MYSQL</p>
+
+                <h4>Inventory Management System</h4>
+
+                <p>
+                  A planned business application inspired by real warehouse
+                  operations, focusing on stock monitoring, product records, and
+                  inventory management.
+                </p>
+
+                <div class="mb-3">
+                  <span class="skill-tag">Laravel</span>
+                  <span class="skill-tag">PHP</span>
+                  <span class="skill-tag">MySQL</span>
+                </div>
+
+                <span class="mono small text-secondary">
+                  CURRENTLY PLANNED
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="section-padding skills-section" id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <p class="section-label mono">04 / WHAT I CAN HELP WITH</p>
+
+            <h2 class="section-title">
+              Turning business needs into web solutions.
+            </h2>
+
+            <p class="section-description mt-4">
+              I focus on practical website development and user-friendly
+              interfaces.
+            </p>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="service-item">
+              <h5>01. Responsive Website Development</h5>
+              <p>Mobile-friendly websites using HTML, CSS, and Bootstrap.</p>
+            </div>
+
+            <div class="service-item">
+              <h5>02. Front-End Website Design</h5>
+              <p>Structured layouts, navigation, and interactive interfaces.</p>
+            </div>
+
+            <div class="service-item">
+              <h5>03. Website Maintenance</h5>
+              <p>
+                Updating content, improving layouts, and fixing front-end
+                issues.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section-padding contact-section" id="contact">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <p class="section-label mono">05 / LET'S CONNECT</p>
+
+            <h2 class="section-title">
+              Have a project<br />
+              in mind?
+              <span style="color: var(--blue)">Let's build it.</span>
+            </h2>
+
+            <p class="section-description mt-4">
+              I'm open to front-end developer opportunities, collaborations, and
+              website development projects. Let's discuss how I can contribute.
+            </p>
+
+            <a
+              href="https://www.linkedin.com/in/glenn-gonzaga-115422192/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-blue mt-3"
+            >
+              Connect on LinkedIn
+              <i class="bi bi-arrow-up-right ms-2"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="contact-box">
+              <p class="mono small text-secondary">FIND ME ONLINE</p>
+
+              <div class="mb-4">
+                <p class="small text-secondary mb-1">LINKEDIN</p>
+                <a
+                  href="https://www.linkedin.com/in/glenn-gonzaga-115422192/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Glenn Gonzaga
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+
+              <div class="mb-4">
+                <p class="small text-secondary mb-1">GITHUB</p>
+                <a
+                  href="https://github.com/NnelgSE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  github.com/NnelgSE
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+
+              <div>
+                <p class="small text-secondary mb-1">LOCATION</p>
+                <p class="mb-0">Davao, Philippines</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3"
+        >
+          <p class="mb-0">© 2026 GLENN GONZAGA. ALL RIGHTS RESERVED.</p>
+
+          <div>
+            <a href="#home">BACK TO TOP ↑</a>
+            <a
+              href="https://github.com/NnelgSE"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GITHUB</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
